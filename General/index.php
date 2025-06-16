@@ -80,42 +80,6 @@ if (!isset($_SESSION['id_usuario'])) {
         </div>
     </nav>
 
-    <!-- Modal Cargando -->
-    <div class="modal fade" id="Cargando" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
-        data-bs-keyboard="false">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content text-center border-0 bg-transparent shadow-none">
-                <div class="modal-body">
-                    <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
-                        <span class="visually-hidden">Cargando...</span>
-                    </div>
-                    <br>
-                    <p class="mt-3 text-white fw-bold bg-dark rounded px-3 py-1 d-inline-block">Cargando, por favor
-                        espere...</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Errores -->
-    <div class="modal fade" id="modal_errores" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content border-danger">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                        aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body" id="modal_errores_mensaje">
-                    Ocurrió un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="/General/index.js?v1.0.0.0"></script>
 
 </body>
