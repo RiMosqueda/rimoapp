@@ -1,0 +1,78 @@
+<div class="container py-4">
+    <!-- Encabezado del POS -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Punto de Venta</h2>
+        <button class="btn btn-success">
+            <i class="fa-solid fa-cash-register"></i> Finalizar Venta
+        </button>
+    </div>
+
+    <!-- Escáner o buscador de código de barras -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <div class="btn-group w-100">
+                <div class="form-floating w-100">
+                    <input type="text" class="form-control" id="codigoBarras"
+                        placeholder="Escanea o escribe el código de barras">
+                    <label for="codigoBarras">Escanea o escribe el código de barras</label>
+                </div>
+                <button type="button" class="btn border">
+                    <i class="fa-solid fa-barcode"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista de artículos agregados -->
+    <div class="card mb-3">
+        <div class="card-header bg-light">
+            <strong>Artículos en venta</strong>
+        </div>
+        <div class="card-body table-responsive p-0" style="height: 400px;">
+            <table class="table table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 80px;">ID</th>
+                        <th style="width: 100px;">Código</th>
+                        <th>Nombre</th>
+                        <th style="width: 100px;">Precio</th>
+                        <th style="width: 100px;">Cantidad</th>
+                        <th style="width: 120px;">Subtotal</th>
+                        <th style="width: 100px;">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Fila de ejemplo -->
+                    <tr>
+                        <td>001</td>
+                        <td>7505478965424</td>
+                        <td>Lámpara LED</td>
+                        <td>$150.00</td>
+                        <td>
+                            <input type="number" class="form-control form-control-sm" value="1" min="1">
+                        </td>
+                        <td>$150.00</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Más filas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Total y resumen -->
+    <div class="d-flex justify-content-end">
+        <div class="card w-100 w-md-50 w-lg-25">
+            <div class="card-body">
+                <h4 class="card-title text-end">Total: <span class="text-success fw-bold">$150.00</span></h4>
+                <button class="btn btn-success w-100 mt-2">
+                    <i class="fa-solid fa-money-bill-wave"></i> Cobrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

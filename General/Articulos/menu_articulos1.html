@@ -1,0 +1,140 @@
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Artículos</h2>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNuevoArticulo">
+            <i class="fa-solid fa-plus"></i> Nuevo
+        </button>
+    </div>
+
+    <!-- Tabla de artículos -->
+    <div class="card">
+        <div class="card-header">
+            <div class="btn-group w-100">
+                <div class="form-floating w-100">
+                    <input type="text" class="form-control" id="buscador" placeholder="Nombre o clave del articulo...">
+                    <label for="buscador">Nombre o clave del articulo...</label>
+                </div>
+                <button type="button" class="btn border">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body table-responsive p-0" style="height: 500px;">
+            <table class="table">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 80px;">ID</th>
+                        <th style="width: 100px;">Codigo barras</th>
+                        <th>Nombre</th>
+                        <th style="width: 100px;">Precio</th>
+                        <th style="width: 100px;">Stock</th>
+                        <th style="width: 100px;">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejemplo de fila -->
+                    <tr>
+                        <td>001</td>
+                        <td>7505478965424</td>
+                        <td>Lámpara LED</td>
+                        <td>$150.00</td>
+                        <td>20</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-warning">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-danger">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Aquí se insertan más filas dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <small>
+        Se visualizan máximo 50 artículos.
+    </small>
+</div>
+
+<!-- Modal para nuevo artículo -->
+<div class="modal fade" id="modalNuevoArticulo" tabindex="-1" aria-labelledby="modalNuevoArticuloLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalNuevoArticuloLabel">Alta de artículo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="nombreArticulo" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombreArticulo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="codigobarras" class="form-label">Codigo de barras</label>
+                    <input type="text" class="form-control" id="codigobarras" required>
+                </div>
+                <div class="mb-3">
+                    <label for="costoArticulo" class="form-label">Costo</label>
+                    <input type="number" class="form-control" id="costoArticulo" required step="0.01">
+                </div>
+                <div class="mb-3">
+                    <label for="precioArticulo" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="precioArticulo" required step="0.01">
+                </div>
+                <div class="mb-3">
+                    <label for="stockArticulo" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="stockArticulo" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="btn_guardar_articulo">Guardar artículo</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para editar artículo -->
+<div class="modal fade" id="modalEditarArticulo" tabindex="-1" aria-labelledby="modalEditarArticuloLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEditarArticuloLabel">Editar artículo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <!-- ID oculto del artículo -->
+                <input type="hidden" id="editarIdArticulo">
+
+                <div class="mb-3">
+                    <label for="editarNombreArticulo" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="editarNombreArticulo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editarCodigobarras" class="form-label">Codigo de barras</label>
+                    <input type="text" class="form-control" id="editarCodigobarras" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editarCostoArticulo" class="form-label">Costo</label>
+                    <input type="number" class="form-control" id="editarCostoArticulo" required step="0.01">
+                </div>
+                <div class="mb-3">
+                    <label for="editarPrecioArticulo" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="editarPrecioArticulo" required step="0.01">
+                </div>
+                <div class="mb-3">
+                    <label for="editarStockArticulo" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="editarStockArticulo" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" id="btn_guardar_articulo_editar">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
